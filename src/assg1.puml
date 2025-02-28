@@ -1,0 +1,109 @@
+@startuml
+
+@startuml
+package Vehicles {
+abstract class Vehicle {
+ # String plateNumber
+ # String make
+ # String model
+ # int yearOfProduction
+ + String getPlateNumber()
+ + String getMake()
+ + String getModel()
+ + String getYearOfProduction()
+ + void setPlateNumber()
+ + void setMake()
+ + void setModel()
+ + void setYearOfProduction()
+ + String toString()
+ + boolean equals(Vehicle other)
+}
+
+abstract class Truck {
+# int maxCapacityKilograms
++ int getMaxCapacity()
++ void setMaxCapacity()
++ String toString()
++ boolean equals(Truck other)
+}
+
+class DieselTruck {
+# int fuelTankCapacity
++ int getFuelTankCapacity()
++ void setFuelTankCapacity()
++ String toString()
++ boolean equals(DieselTruck other)
+}
+
+class ElectricTruck {
+# int maxAutonomyRange
++ int getMaxAutonomyRange()
++ String toString()
++ boolean equals(ElectricTruck other)
+}
+
+abstract class Car {
+# int maxPassengers
++ getMaxPassengers()
++ setMaxPassengers()
++ String toString()
++ boolean equals(Vehicle other)
+}
+
+class ElectricCar {
+# maxAutonomyKilometers
++ getMaxAutonomyKilometers()
++ setMaxAnatomyKilometers()
+}
+
+class GasolineCar{
+}
+
+
+}
+
+package Client {
+Class Client {
+- String fullName
+- int dateOfBirth
+- int phoneNumber
+- Vehicle[] leasedVehicles
++ getClientName()
++ getClientId()
++ getClientPhoneNumber()
++ getClientLeasedVehicles()
++ setClientName()
++ setClientId()
++ setClientPhoneNumber()
++ setClientLeasedVehicles
++ toString() : string
++ equals (Object obj)
+
+
+}
+}
+
+package Driver {
+
+class Driver {
+import vehicle
+Displaymenu()
+
+}
+}
+
+Vehicle <|--- Truck : is-a
+Vehicle <|--- Car : is-a
+
+Truck <|--- ElectricTruck : is-a
+Truck <|--- DieselTruck : is-a
+
+
+Car <|--- ElectricCar : is-a
+Car <|--- GasolineCar : is-a
+
+
+
+@enduml/
+
+@enduml
